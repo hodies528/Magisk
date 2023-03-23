@@ -4,7 +4,15 @@
 
 Magisk ships with a feature complete BusyBox binary (including full SELinux support). The executable is located at `/data/adb/magisk/busybox`. Magisk's BusyBox supports runtime toggle-able "ASH Standalone Shell Mode". What this standalone mode means is that when running in the `ash` shell of BusyBox, every single command will directly use the applet within BusyBox, regardless of what is set as `PATH`. For example, commands like `ls`, `rm`, `chmod` will **NOT** use what is in `PATH` (in the case of Android by default it will be `/system/bin/ls`, `/system/bin/rm`, and `/system/bin/chmod` respectively), but will instead directly call internal BusyBox applets. This makes sure that scripts always run in a predictable environment and always have the full suite of commands no matter which Android version it is running on. To force a command _not_ to use BusyBox, you have to call the executable with full paths.
 
-Every single shell script running in the context of Magisk will be executed in BusyBox's `ash` shell with standalone mode enabled. For what is relevant to 3rd party developers, this includes all boot scripts and module installation scripts.
+Every single shell script running in the context of Magisk will be executed in BusyBox's `ash` shell with standalone mode enabled. For what is relevant to 3rd party develope![cutcamera (1)](https://user-images.githubusercontent.com/71695587/227090581-6fe63043-eb11-480c-aa1f-3bc891594a1e.png)
+[magisk_install_log_2023-03-23T10.43.28.log](https://github.com/topjohnwu/Magisk/files/11046537/magisk_install_log_2023-03-23T10.43.28.log)
+[magisk_install_log_2023-03-23T10.43.28.log](https://github.com/topjohnwu/Magisk/files/11046560/magisk_install_log_2023-03-23T10.43.28.log)
+[magisk_install_log_2023-03-23T10.43.24.log](https://github.com/topjohnwu/Magisk/files/11046561/magisk_install_log_2023-03-23T10.43.24.log)
+[magisk_install_log_2023-03-23T10.37.38.log](https://github.com/topjohnwu/Magisk/files/11046562/magisk_install_log_2023-03-23T10.37.38.log)
+[magisk_install_log_2023-03-23T10.43.22.log](https://github.com/topjohnwu/Magisk/files/11046563/magisk_install_log_2023-03-23T10.43.22.log)
+[magisk_install_log_2023-03-23T10.43.23.log](https://github.com/topjohnwu/Magisk/files/11046564/magisk_install_log_2023-03-23T10.43.23.log)
+[magisk_install_log_2023-03-23T10.37.37.log](https://github.com/topjohnwu/Magisk/files/11046565/magisk_install_log_2023-03-23T10.37.37.log)
+rs, this includes all boot scripts and module installation scripts.
 
 For those who want to use this "Standalone Mode" feature outside of Magisk, there are 2 ways to enable it:
 
